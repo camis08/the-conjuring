@@ -1,0 +1,20 @@
+h1,h2,h3,h4{
+    /*color: blue;
+    background-color: yellow;*/
+}
+p {
+    color: rgb(255, 17, 0);
+}
+.titulos {
+    background-color: blueviolet;
+    color: black;
+
+    padding:30px;
+    border: 5px dotted blue;
+    margin: 20px 40px 30px 10px;
+}
+#paragrafos {
+    background-color: aqua;
+    color: green;
+    padding: 50x;;
+}
