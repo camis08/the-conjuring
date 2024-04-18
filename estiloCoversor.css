@@ -6,7 +6,24 @@ input, select, button {
     padding: 50px;
     text-align: center;
     margin-top: 50px;
+    background-image: url(https://conteudo.imguol.com.br/blogs/205/files/2018/02/loma-01.png)
 }
+
+.mensagem-usuario {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #d4eaf7;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.oculto {
+    display: none;
+}
+
 #titulo {
     margin-bottom: 60px;
 }
