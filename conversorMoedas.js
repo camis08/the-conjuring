@@ -1,4 +1,3 @@
-
 let botaoConverter = document.getElementById("botao-converter");
 botaoConverter.addEventListener("click", converter);
 
@@ -87,15 +86,6 @@ function buscaAPI(moedaOrigem="USD", moedaDestino="BRL") {
         return data.json();
     }).then(function(response){
         return response[moedaOrigem + moedaDestino];
-
-        console.log(objetoEmJson);
-
-        //console.log(response["USDBRL"]["ask"]);
-        //console.log(typeof(response["USDBRL"]["ask"]));
-        
-        return response;
-        //return response;
-        //return response["USDBRL"]["ask"];
     }).catch();
 }
 
@@ -106,18 +96,6 @@ function converter() {
     let moedaOrigem  = document.getElementById("moeda1").value;
     let moedaDestino = document.getElementById("moeda2").value;
 
-    /*
-    if (moedaOrigem == "real") {
-        urlAPIParametroMoedaOrigem = "BRL";
-    }
-    if (moedaOrigem == "euro") {
-        urlAPIParametroMoedaOrigem = "EUR";
-    }
-    if (moedaOrigem == "dolar") {
-        urlAPIParametroMoedaOrigem = "USD";
-    }
-    */
-    
     if(valorUsuario == "") {
         alert("Valor não pode ser vazio!");
         return;
@@ -134,9 +112,7 @@ function converter() {
     }
 
     buscaAPI(moedaOrigem, moedaDestino).then(function(data){
-        //let objetoRetorno = JSON.parse(data);
         let conversao = valorUsuario * data["ask"];
-
 
         let simbolo = "";
         if (moedaDestino == "BRL") {
@@ -151,6 +127,7 @@ function converter() {
         if (moedaDestino == "GBP") {
             simbolo = "£";
         }
+
         
         let resultado = document.getElementById("resultado");
         resultado.textContent = simbolo + " " + conversao.toFixed(2);
@@ -161,14 +138,10 @@ function converter() {
             moeda2: moedaDestino,
             resultado: conversao
         }
-
         salvaResultadoNoHistorico(resultadoDaConversao);
 
-        console.log(conversao);
-
-        console.log(data["ask"]);
-    });
-    return;
+    });    
+}
 
 function inverter() {
     let moeda1 = document.getElementById("moeda1").value;
